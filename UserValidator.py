@@ -25,7 +25,16 @@ class UserValidator:
         if check:
             return 'matched'
         else:
-            return 'unmatched'                
+            return 'unmatched' 
+
+
+    def validateMobileNumber(self, number):
+        MOBILE_PATTERN = "^[0-9]{2}[[:space:]][0-9]{10}"
+        check = re.match(MOBILE_PATTERN, number)
+        if check:
+            return 'matched'
+        else:
+            return 'unmatched'                        
 
 
                
