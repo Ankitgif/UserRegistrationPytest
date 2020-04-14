@@ -25,6 +25,6 @@ class Test_UserValidatorTest:
 
     def test_givenPassWord_WhenProper_ShouldReturnTrue(self):
         validator = UserValidator()
-        result = validator.validatePassWord("abcdefghijkl")
+        result = validator.validatePassWord("abcdEfgh123ijkl")
         assert result == 'matched'                
 
