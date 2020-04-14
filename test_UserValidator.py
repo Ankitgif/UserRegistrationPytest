@@ -11,5 +11,10 @@ class Test_UserValidatorTest:
     def test_givenLastName_WhenProper_ShouldReturnTrue(self):
         validator = UserValidator()
         result = validator.validateLastName("Kumar")
-        assert result == 'matched'    
+        assert result == 'matched' 
+
+    def test_givenEmail_WhenProper_ShouldReturnTrue(self):
+        validator = UserValidator()
+        result = validator.validateEmail("abc@yahoo.com")
+        assert result == 'matched'        
 
