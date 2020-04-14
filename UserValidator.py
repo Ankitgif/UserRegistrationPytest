@@ -34,7 +34,15 @@ class UserValidator:
         if check:
             return 'matched'
         else:
-            return 'unmatched'                        
+            return 'unmatched' 
+
+    def validatePassWord(self, password):
+        PASSWORD_PATTERN = "^[a-zA-z]{8,}$"
+        check = re.match(PASSWORD_PATTERN, password)
+        if check:
+            return 'matched'
+        else:
+            return 'unmatched'                                
 
 
                
