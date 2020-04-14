@@ -12,4 +12,12 @@ class UserValidator:
             return 'unmatched'
 
 
+    def validateLastName(self, lname):
+        check = re.match(NAME_PATTERN, lname)
+        if check:
+            return 'matched'
+        else:
+            return 'unmatched'        
+
+
                
