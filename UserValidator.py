@@ -29,7 +29,7 @@ class UserValidator:
 
 
     def validateMobileNumber(self, number):
-        MOBILE_PATTERN = "^[0-9]{2}[[:space:]][0-9]{10}"
+        MOBILE_PATTERN = "^[0-9]{2}[ :space: ][0-9]{10}"
         check = re.match(MOBILE_PATTERN, number)
         if check:
             return 'matched'
@@ -37,7 +37,7 @@ class UserValidator:
             return 'unmatched' 
 
     def validatePassWord(self, password):
-        PASSWORD_PATTERN = "^[a-zA-z]{8,}$"
+        PASSWORD_PATTERN = "^((?=.*[A-Z])([a-zA-Z0-9]){8,})$"
         check = re.match(PASSWORD_PATTERN, password)
         if check:
             return 'matched'
