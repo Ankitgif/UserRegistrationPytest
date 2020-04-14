@@ -37,7 +37,7 @@ class UserValidator:
             return 'unmatched' 
 
     def validatePassWord(self, password):
-        PASSWORD_PATTERN = "^((?=.*[A-Z])([a-zA-Z0-9]){8,})$"
+        PASSWORD_PATTERN = "^((?=.*[A-Z])(?=.*[0-9])([a-zA-Z0-9]){8,})$"
         check = re.match(PASSWORD_PATTERN, password)
         if check:
             return 'matched'
