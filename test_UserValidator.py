@@ -6,4 +6,4 @@ class Test_UserValidatorTest:
         validator = UserValidator()
         result = validator.validateFirstName("Ankit")
         assert result == 'matched'
-    
+
