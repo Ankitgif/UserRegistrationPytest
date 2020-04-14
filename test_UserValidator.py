@@ -16,5 +16,10 @@ class Test_UserValidatorTest:
     def test_givenEmail_WhenProper_ShouldReturnTrue(self):
         validator = UserValidator()
         result = validator.validateEmail("abc@yahoo.com")
-        assert result == 'matched'        
+        assert result == 'matched' 
+
+    def test_givenMobileNumber_WhenProper_ShouldReturnTrue(self):
+        validator = UserValidator()
+        result = validator.validateMobileNumber("91 8877150686")
+        assert result == 'matched'            
 
