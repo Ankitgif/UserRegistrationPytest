@@ -21,5 +21,10 @@ class Test_UserValidatorTest:
     def test_givenMobileNumber_WhenProper_ShouldReturnTrue(self):
         validator = UserValidator()
         result = validator.validateMobileNumber("91 8877150686")
-        assert result == 'matched'            
+        assert result == 'matched' 
+
+    def test_givenPassWord_WhenProper_ShouldReturnTrue(self):
+        validator = UserValidator()
+        result = validator.validatePassWord("abcdefghijkl")
+        assert result == 'matched'                
 
