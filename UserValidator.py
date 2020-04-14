@@ -17,7 +17,15 @@ class UserValidator:
         if check:
             return 'matched'
         else:
-            return 'unmatched'        
+            return 'unmatched' 
+
+    def validateEmail(self, email):
+        EMAIL_PATTERN = "^[a-z]{3,}([._+\-][a-z0-9]*)?[@]{1}[a-z]{2,}[.]{1}[a-z]{2,4}(\.[a-z]{2})?$"
+        check = re.match(EMAIL_PATTERN, email)
+        if check:
+            return 'matched'
+        else:
+            return 'unmatched'                
 
 
                
