@@ -1,11 +1,15 @@
 import re
 class UserValidator:
     
+    global NAME_PATTERN
+    NAME_PATTERN = '^[A-Z]{1}[a-z]{2,}$'
 
     def validateFirstName(self, fname):
-        FIRST_NAME_PATTERN = '^[A-Z]{1}[a-z]{2,}$'
-        check = re.match(FIRST_NAME_PATTERN, fname)
+        check = re.match(NAME_PATTERN, fname)
         if check:
             return 'matched'
         else:
-            return 'unmatched'    
+            return 'unmatched'
+
+
+               
