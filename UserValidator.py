@@ -2,7 +2,10 @@ import re
 class UserValidator:
     
     global NAME_PATTERN
+    global EMAIL_PATTERN
     NAME_PATTERN = '^[A-Z]{1}[a-z]{2,}$'
+    EMAIL_PATTERN = "^[a-z]{3,}([._+\-][a-z0-9]*)?[@]{1}[a-z]{2,}[.]{1}[a-z]{2,4}(\.[a-z]{2})?$"
+    
 
     def validateFirstName(self, fname):
         check = re.match(NAME_PATTERN, fname)
@@ -20,7 +23,6 @@ class UserValidator:
             return 'unmatched' 
 
     def validateEmail(self, email):
-        EMAIL_PATTERN = "^[a-z]{3,}([._+\-][a-z0-9]*)?[@]{1}[a-z]{2,}[.]{1}[a-z]{2,4}(\.[a-z]{2})?$"
         check = re.match(EMAIL_PATTERN, email)
         if check:
             return 'matched'
@@ -42,7 +44,15 @@ class UserValidator:
         if check:
             return 'matched'
         else:
-            return 'unmatched'                                
+            return 'unmatched'   
+
+    def validateEmailParam(self,name):
+        check = re.match(EMAIL_PATTERN, name)
+        if check:
+            return True
+        else:
+            return False
+
 
 
                
